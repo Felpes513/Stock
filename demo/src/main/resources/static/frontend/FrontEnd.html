@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ce.css">
+    <title>Controle de Estoque</title>
+    <style>
+        /* Container principal */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Banner principal - comandos */
+        .main-banner {
+            width: 60%;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        /* Banner direito - itens disponíveis */
+        .right-banner {
+            width: 35%;
+            height: 300px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Banner inferior - produtos no carrinho */
+        .bottom-banner {
+            width: 35%;
+            height: 200px;
+            background-color: #e0f7fa;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Banner Principal -->
+    <div class="main-banner">
+        <h1>Controle de Estoque</h1>
+
+        <input type="text" id="itemInput" placeholder="Nome do Item">
+        <input type="number" id="precoInput" placeholder="Preço" step="0.01" min="0">
+        <input type="number" id="quantidadeInput" placeholder="Quantidade" min="1">
+        <button onclick="cadastrarItem()">Cadastrar Item</button>
+
+        <!-- Botão de seta -->
+        <button id="toggleBtn">▼</button>
+
+        <!-- Container para as opções ocultas -->
+        <div id="opcoesContainer" class="hidden">
+            <button id="listarBtn" onclick="listarProdutos()">Listar Item</button>
+            <button id="excluirBtn">Excluir Item</button>
+            <button id="moverCarrinhoBtn">Mover para o Carrinho</button>
+        </div>
+
+        <h2>Estoque</h2>
+        <ul id="estoqueList"></ul>
+    </div>
+
+    <!-- Banner Direito - Itens disponíveis -->
+    <div class="right-banner">
+        <p>Itens Disponíveis no Estoque</p>
+        <!-- Aqui você pode adicionar a lista de itens disponíveis -->
+    </div>
+
+    <!-- Banner Inferior - Produtos no carrinho -->
+    <div class="bottom-banner">
+        <p>Produtos no Carrinho</p>
+        <!-- Aqui você pode adicionar a lista de itens no carrinho -->
+    </div>
+</div>
+
+<script src="js/ce.js"></script>
+</body>
+</html>
