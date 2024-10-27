@@ -10,13 +10,11 @@ public class Produto {
     @Getter @Setter
     private int id;
 
-    
     @Getter @Setter
     @com.example.demo.Modelo.NotBlank(message = "O nome do produto não pode ser vazio")
     private String nome;
 
     @Getter @Setter
-
     @Min(value = 0, message = "O preço deve ser maior ou igual a zero")
     private Double preco;
 
@@ -34,12 +32,5 @@ public class Produto {
     public String toString() {
         return String.format("ID: %d%nNome: %s%nPreço: %.2f%nQuantidade: %d",
                 this.getId(), this.getNome(), this.getPreco(), this.getQuantidade());
-    }
-
-    public void cadastrarProduto(Produto produto) {
-        
-    }
-
-    public void deletarProduto(int id) {
     }
 }
