@@ -3,7 +3,6 @@ package com.example.demo.Modelo;
 import jakarta.validation.constraints.Min;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
 
 public class Produto {
 
@@ -22,7 +21,7 @@ public class Produto {
     @Min(value = 0, message = "A quantidade deve ser maior ou igual a zero")
     private int quantidade;
 
-    public Produto(String nome, Double preco, int quantidade) {
+    public Produto() {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;

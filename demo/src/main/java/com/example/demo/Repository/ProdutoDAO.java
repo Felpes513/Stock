@@ -2,6 +2,7 @@ package com.example.demo.Repository;
 
 import com.example.demo.Modelo.Produto;
 import com.example.demo.conexao.ConexaoMySQL;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -51,7 +52,7 @@ public class ProdutoDAO {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                Produto produto = new Produto(rs.getString("nome"), rs.getDouble("preco"), rs.getInt("quantidade"));
+                Produto produto = new Produto();
                 produto.setId(rs.getInt("id"));
                 produtos.add(produto);
             }
@@ -95,9 +96,6 @@ public class ProdutoDAO {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     produto = new Produto(
-                            rs.getString("nome"),
-                            rs.getDouble("preco"),
-                            rs.getInt("quantidade")
                     );
                     produto.setId(rs.getInt("id"));
                 }
