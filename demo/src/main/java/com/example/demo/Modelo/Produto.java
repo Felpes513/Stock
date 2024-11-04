@@ -1,30 +1,27 @@
 package com.example.demo.Modelo;
 
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 public class Produto {
 
-    @Getter @Setter
     private int id;
 
-    @Getter @Setter
-    @com.example.demo.Modelo.NotBlank(message = "O nome do produto não pode ser vazio")
+    @NotBlank(message = "O nome do produto não pode ser vazio")
     private String nome;
 
-    @Getter @Setter
     @Min(value = 0, message = "O preço deve ser maior ou igual a zero")
     private Double preco;
 
-    @Getter @Setter
     @Min(value = 0, message = "A quantidade deve ser maior ou igual a zero")
     private int quantidade;
 
+    // Construtor sem parâmetros, não inicializa os atributos
     public Produto() {
-        this.nome = nome;
-        this.preco = preco;
-        this.quantidade = quantidade;
     }
 
     @Override
